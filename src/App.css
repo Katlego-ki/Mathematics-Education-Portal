@@ -1,0 +1,35 @@
+nav{
+    height: 50px;
+    background: rgb(80,80,250);
+    display: inline-block;
+    width: 100%;
+}
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+body{
+    background-color: white;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+div{
+    height: 100px;
+}
+body .h1{
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+nav ul li :hover {
+    text-decoration: underline;
+}
