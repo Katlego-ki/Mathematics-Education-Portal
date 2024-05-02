@@ -4,7 +4,7 @@ const Layout = () => {
   return (
     <>
       <div></div>
-      <nav>
+      <nav id="nav-bar">
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -20,7 +20,31 @@ const Layout = () => {
           </li>
         </ul>
       </nav>
+      
       <Outlet />
+      <footer>
+
+        <section id="sectionA">
+          <h3>Quick links</h3>
+          <ul>
+            <li>Home</li>
+            <li>Blogs</li>
+            <li>Contact</li>
+            <li>About</li>
+          </ul>
+        </section>
+
+        <section id="sectionB">
+          <h3>For Learners</h3>
+          <ul>
+            <li>login</li>
+            <li>Enroll</li>
+            <li>FAQ's</li>
+          </ul>
+
+        </section>
+        
+      </footer>
     </>
   )
 };

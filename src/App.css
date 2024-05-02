@@ -1,13 +1,17 @@
 nav{
     height: 50px;
     background: rgb(80,80,250);
-    display: inline-block;
+    display: block;
     width: 100%;
+    position: absolute;
+    left:0;
+    margin: 5px;
 }
 nav ul{
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
+    justify-items: left;
 }
 
 nav ul li a{
@@ -32,4 +36,19 @@ body .h1{
 
 nav ul li :hover {
     text-decoration: underline;
+}
+
+footer{
+    background-color: gray;
+    padding: 1%;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+div #content{
+    position: relative;
 }
