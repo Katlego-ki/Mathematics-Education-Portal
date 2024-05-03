@@ -1,12 +1,14 @@
-nav{
-    height: 50px;
+#nav-bar{
+    height: 100%;
     background: rgb(80,80,250);
-    display: block;
-    width: 100%;
-    position: absolute;
-    left:0;
-    margin: 5px;
+    
+    position: relative;
+    
+    left: 0;
+    right: 0;
+    padding: 0.1%;
 }
+
 nav ul{
     display: flex;
     justify-content: space-evenly;
@@ -23,18 +25,22 @@ nav ul li a{
 body{
     background-color: white;
     font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    margin: 0px;
 }
 
-div{
-    height: 100px;
+#root{
+    height: 100%;
+    left: 0;
+    right: 0;
 }
+
 body .h1{
     display: flex;
-    justify-content: center;
+    left:0;
     color: black;
 }
 
-nav ul li :hover {
+#nav-bar li :hover {
     text-decoration: underline;
 }
 
@@ -43,12 +49,28 @@ footer{
     padding: 1%;
     display: flex;
     justify-content: space-evenly;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+    position: relative;
+    /*To fix overflowing, left,right = 0 instead of width: 100%*/
     left: 0;
+    right: 0;
+    bottom: 0;
 }
 
-div #content{
+#outlet-div{
     position: relative;
+    left: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-top: 15px;
+    min-height: 405px;
+}
+
+body p{
+    flex-wrap: wrap;
+}
+
+#org-logo{
+    top: 0;
+    height: 80px;
 }

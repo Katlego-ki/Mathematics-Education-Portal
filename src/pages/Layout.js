@@ -3,25 +3,29 @@ import { Outlet, Link } from "react-router-dom";
 const Layout = () => {
   return (
     <>
-      <div></div>
-      <nav id="nav-bar">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/blogs">Blogs</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="/about">About Us</Link>
-          </li>
-        </ul>
-      </nav>
+      <div id="org-logo"></div>
+      <div>
+        <nav id="nav-bar">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/blogs">Blogs</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div id="outlet-div">
+        <Outlet />
+      </div>
       
-      <Outlet />
       <footer>
 
         <section id="sectionA">
@@ -41,7 +45,6 @@ const Layout = () => {
             <li>Enroll</li>
             <li>FAQ's</li>
           </ul>
-
         </section>
         
       </footer>
