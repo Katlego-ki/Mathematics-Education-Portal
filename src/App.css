@@ -11,21 +11,23 @@
 
 nav ul{
     display: flex;
-    justify-content: space-evenly;
-    list-style-type: none;
-    justify-items: left;
+    list-style-type: none; 
 }
 
 nav ul li a{
     text-decoration: none;
     color: white;
     font-weight: 600;
+    padding-left: 100px;
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    bottom: 0; 
+    margin: 0;
     background-color: white;
     font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
-    margin: 0px;
 }
 
 #root{
@@ -54,6 +56,7 @@ footer{
     left: 0;
     right: 0;
     bottom: 0;
+    box-shadow: 0px -1px 8px rgb(100,100,100, 0.8);
 }
 
 #outlet-div{
@@ -62,8 +65,9 @@ footer{
     display: flex;
     flex-wrap: wrap;
     width: 50%;
-    padding-top: 15px;
-    min-height: 405px;
+    padding: 30px;
+    min-height: 430px;
+    box-shadow: 0px 5px 10px black;
 }
 
 body p{
@@ -73,4 +77,10 @@ body p{
 #org-logo{
     top: 0;
     height: 80px;
+}
+
+form{
+    padding-left: 658px;
+    
+    
 }
