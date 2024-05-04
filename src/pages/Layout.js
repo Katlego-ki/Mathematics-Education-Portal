@@ -1,4 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
+import SearchIcon from '@mui/icons-material/Search';
 
 const Layout = () => {
   return (
@@ -14,10 +15,16 @@ const Layout = () => {
               <Link to="/blogs">Blogs</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">Contact Us</Link>
             </li>
             <li>
-              <Link to="/about">About Us</Link>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+            <form>
+            <input type="text" placeholder="Search.." name = "search"/>
+            <button type="submit" id="search-button"><i>Go</i></button>
+          </form>
             </li>
           </ul>
         </nav>
