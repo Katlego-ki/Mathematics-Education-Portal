@@ -1,9 +1,8 @@
 #nav-bar{
     height: 100%;
     background: rgb(80,80,250);
-    
+    display: flex;
     position: relative;
-    
     left: 0;
     right: 0;
     padding: 0.1%;
@@ -12,13 +11,14 @@
 nav ul{
     display: flex;
     list-style-type: none; 
+    width: 50%;
 }
 
 nav ul li a{
     text-decoration: none;
     color: white;
     font-weight: 600;
-    padding-left: 100px;
+    justify-content: space-evenly;
 }
 
 body{
@@ -79,8 +79,12 @@ body p{
     height: 80px;
 }
 
-form{
-    padding-left: 658px;
-    
-    
+#search-bar{
+    display: flex;
+    position: relative;
+    margin: auto;
+}
+
+nav ul li{
+    margin: auto;
 }
