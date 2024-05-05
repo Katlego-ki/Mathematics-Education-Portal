@@ -1,5 +1,9 @@
+import React  from "react";
 import { Outlet, Link } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import IconButton from "@mui/material/IconButton";
 import SearchIcon from '@mui/icons-material/Search';
+
 
 const Layout = () => {
   return (
@@ -20,13 +24,19 @@ const Layout = () => {
             <li>
               <Link to="/about">About</Link>
             </li>
-            <li>
-            <form>
-            <input type="text" placeholder="Search.." name = "search"/>
-            <button type="submit" id="search-button"><i>Go</i></button>
-          </form>
-            </li>
           </ul>
+          <form  id ="search-bar">
+                <TextField 
+                    variant="outlined"
+                    placeholder="Search..."
+                    size="small" 
+                    style={{backgroundColor: "rgb(150,150,150)"}}
+                />
+                    <IconButton type="submit" aria-label="search">
+                      <SearchIcon style={{fill : "white"}} />
+                    </IconButton>
+                      
+              </form> 
         </nav>
       </div>
       <div id="outlet-div">
