@@ -3,7 +3,13 @@ import { Outlet, Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from '@mui/icons-material/Search';
-
+import { Icon } from "@mui/material";
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
+import PhoneIcon from '@mui/icons-material/Phone';
+import ArticleIcon from '@mui/icons-material/Article';
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
 
 const Layout = () => {
   return (
@@ -13,16 +19,36 @@ const Layout = () => {
         <nav id="nav-bar">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">
+                <Stack alignment="center" direction="row" gap={2}> 
+                  <HomeIcon/>
+                  <Typography style={{fontWeight:"600"}}>Home</Typography>
+                </Stack>
+              </Link>
             </li>
             <li>
-              <Link to="/blogs">Blogs</Link>
+              <Link to="/blogs">
+                <Stack alignment="center" direction="row" gap={2}> 
+                  <ArticleIcon/>
+                    <Typography style={{fontWeight:"600"}}>Blogs</Typography>
+                </Stack>
+              </Link>
             </li>
             <li>
-              <Link to="/contact">Contact Us</Link>
+              <Link to="/contact">
+                <Stack alignment="center" direction="row" gap={2}> 
+                <PhoneIcon/>
+                    <Typography style={{fontWeight:"600"}}>Contact Us</Typography>
+                </Stack> 
+              </Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about">
+                <Stack alignment="center" direction="row" gap={2}> 
+                <InfoIcon />
+                    <Typography style={{fontWeight:"600"}}>About</Typography>
+                </Stack> 
+              </Link>
             </li>
           </ul>
           <form  id ="search-bar">
