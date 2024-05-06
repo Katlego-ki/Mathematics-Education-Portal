@@ -19,6 +19,7 @@ nav ul li a{
     color: white;
     font-weight: 600;
     justify-content: space-evenly;
+    height: 100%;
 }
 
 body{
@@ -82,9 +83,14 @@ body p{
 #search-bar{
     display: flex;
     position: relative;
+    padding-left: 400px;
     margin: auto;
 }
 
 nav ul li{
     margin: auto;
 }
+
+#sectionA{
+    justify-content: left;
+} 
