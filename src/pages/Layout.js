@@ -10,6 +10,9 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import ArticleIcon from '@mui/icons-material/Article';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
+import Box from "@mui/material/Box";
+
+const styles = {style1:{fontWeight:"600", paddingLeft:"10px"}};
 
 const Layout = () => {
   return (
@@ -17,40 +20,28 @@ const Layout = () => {
       <div id="org-logo"></div>
       <div>
         <nav id="nav-bar">
-          <ul>
-            <li>
-              <Link to="/">
-                <Stack alignment="center" direction="row" gap={2}> 
-                  <HomeIcon/>
-                  <Typography style={{fontWeight:"600"}}>Home</Typography>
-                </Stack>
-              </Link>
-            </li>
-            <li>
-              <Link to="/blogs">
-                <Stack alignment="center" direction="row" gap={2}> 
-                  <ArticleIcon/>
-                    <Typography style={{fontWeight:"600"}}>Blogs</Typography>
-                </Stack>
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact">
-                <Stack alignment="center" direction="row" gap={2}> 
-                <PhoneIcon/>
-                    <Typography style={{fontWeight:"600"}}>Contact Us</Typography>
-                </Stack> 
-              </Link>
-            </li>
-            <li>
-              <Link to="/about">
-                <Stack alignment="center" direction="row" gap={2}> 
-                <InfoIcon />
-                    <Typography style={{fontWeight:"600"}}>About</Typography>
-                </Stack> 
-              </Link>
-            </li>
-          </ul>
+          <Stack alignment="center" direction="row">
+            <Link to="/">
+              <HomeIcon/>
+              <Typography style={styles.style1}>Home</Typography>
+            </Link>  
+
+            <Link to="/blogs">
+              <ArticleIcon/>
+              <Typography style={styles.style1}>Blogs</Typography>
+            </Link>  
+
+            <Link to="/about">
+              <PhoneIcon/>
+              <Typography style={styles.style1}>Contact_Us</Typography>
+            </Link>
+
+            <Link to="/about">
+              <InfoIcon />
+              <Typography style={styles.style1}>About</Typography>
+            </Link>
+          </Stack>
+         
           <form  id ="search-bar">
                 <TextField 
                     variant="outlined"
