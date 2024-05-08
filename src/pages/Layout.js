@@ -3,16 +3,20 @@ import { Outlet, Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from '@mui/icons-material/Search';
-import { Icon } from "@mui/material";
+//import { Icon } from "@mui/material";
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import PhoneIcon from '@mui/icons-material/Phone';
 import ArticleIcon from '@mui/icons-material/Article';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
-import Box from "@mui/material/Box";
+//import { colors } from "@mui/material";
+//import Box from "@mui/material/Box";
 
-const styles = {style1:{fontWeight:"600", paddingLeft:"10px"}};
+const styles = {
+  style1:{fontWeight:"600", paddingLeft:"10px"},
+  styles2:{color:"rgb(50,10,200)", paddingLeft:"10px", textDecoration:"none"}
+};
 
 const Layout = () => {
   return (
@@ -31,7 +35,7 @@ const Layout = () => {
               <Typography style={styles.style1}>Blogs</Typography>
             </Link>  
 
-            <Link to="/about">
+            <Link to="/contact">
               <PhoneIcon/>
               <Typography style={styles.style1}>Contact_Us</Typography>
             </Link>
@@ -53,34 +57,49 @@ const Layout = () => {
                       <SearchIcon style={{fill : "white"}} />
                     </IconButton>
                       
-              </form> 
+          </form> 
         </nav>
       </div>
+
       <div id="outlet-div">
         <Outlet />
       </div>
       
-      <footer>
+      <footer> {/*use <stack> to replace <Stack> */}
+        <Stack id="sectionA" direction="column"> 
+          <Typography variant="h4" >Quick links</Typography>
+          <Link to="/">
+              <Typography style={styles.styles2}>Home</Typography>
+            </Link>  
 
-        <section id="sectionA">
-          <h3>Quick links</h3>
-          <ul>
-            <li>Home</li>
-            <li>Blogs</li>
-            <li>Contact</li>
-            <li>About</li>
-          </ul>
-        </section>
+            <Link to="/blogs">      
+              <Typography style={styles.styles2}>Blogs</Typography>
+            </Link>  
 
-        <section id="sectionB">
-          <h3>For Learners</h3>
-          <ul>
-            <li>login</li>
-            <li>Enroll</li>
-            <li>FAQ's</li>
-          </ul>
-        </section>
+            <Link to="/contact">    
+              <Typography style={styles.styles2}>Contact_Us</Typography>
+            </Link>
+
+            <Link to="/about">
+              <Typography style={styles.styles2}>About</Typography>
+            </Link>
         
+        </Stack>
+
+        <Stack id="sectionB" direction="column">
+          <Typography variant="h4">For Learners</Typography>
+          <Link to="/login">      
+            <Typography style={styles.styles2}>Login</Typography>
+          </Link>  
+
+          <Link to="/sign-in">    
+            <Typography style={styles.styles2}>Enroll/Register</Typography>
+          </Link>
+
+          <Link to="/queries">
+            <Typography style={styles.styles2}>FAQ's 'just example'</Typography>
+          </Link>
+        </Stack>   
       </footer>
     </>
   )
