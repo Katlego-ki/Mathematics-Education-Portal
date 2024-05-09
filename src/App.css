@@ -1,6 +1,6 @@
 #nav-bar{
     height: 100%;
-    background: rgb(80,80,250);
+    /*background: rgb(80,80,250);*/
     display: flex;
     position: relative;
     left: 0;
@@ -10,12 +10,11 @@
 
 nav div{
     display: flex;
-    list-style-type: none; 
     width: 50%;
     margin: auto;
 }
 
-nav div a{
+#module-links a{
     text-decoration: none;
     display: flex;
     color: white;
@@ -25,7 +24,7 @@ nav div a{
     margin: auto;
 }
 
-#nav-bar div :hover{
+#module-links :hover{
     text-decoration: underline;
 }
 
@@ -58,17 +57,11 @@ footer{
     height: 80px;
 }
 
-#search-bar{
+#Search-bar{
+    justify-content:flex-end;
+    padding-right: 1%;
+}
+#text-field{
     display: flex;
-    position: relative;
-    padding-left: 400px;
-    margin: auto;
+    justify-content: space-evenly;
 }
-
-nav div a{
-    margin: auto;
-}
-
-#sectionA{
-    justify-content: left;
-} 
