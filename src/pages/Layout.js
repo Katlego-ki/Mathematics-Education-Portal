@@ -1,5 +1,5 @@
 import React  from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link} from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from '@mui/icons-material/Search';
@@ -12,19 +12,30 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 //import { colors } from "@mui/material";
 //import Box from "@mui/material/Box";
-
-const styles = {
-  style1:{fontWeight:"600", paddingLeft:"10px"},
-  styles2:{color:"rgb(50,10,200)", paddingLeft:"10px", textDecoration:"none"}
-};
+import { useState } from "react";
+import { Button } from "@mui/material";
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import InputAdornment from "@mui/material/InputAdornment";
 
 const Layout = () => {
+  const [theme, setTheme] = useState("light")
+
+  const styles = {
+    style1:{fontWeight:"600", paddingLeft:"10px"},
+    styles2:{color:"rgb(50,10,200)", paddingLeft:"10px", textDecoration:"none"}
+  };
+  
+  const themes = {
+    darkMode:{backgroundColor: "green"},
+    lightMode:{backgroundColor: "blue"}
+  }
+
   return (
     <>
       <div id="org-logo"></div>
       <div>
-        <nav id="nav-bar">
-          <Stack alignment="center" direction="row">
+        <nav id="nav-bar" style={themes.darkMode}>
+          <Stack id="module-links" alignment="center" direction="row">
             <Link to="/">
               <HomeIcon/>
               <Typography style={styles.style1}>Home</Typography>
@@ -45,19 +56,28 @@ const Layout = () => {
               <Typography style={styles.style1}>About</Typography>
             </Link>
           </Stack>
-         
-          <form  id ="search-bar">
-                <TextField 
-                    variant="outlined"
-                    placeholder="Search..."
-                    size="small" 
-                    style={{backgroundColor: "rgb(150,150,150)"}}
-                />
-                    <IconButton type="submit" aria-label="search">
-                      <SearchIcon style={{fill : "white"}} />
-                    </IconButton>
+
+          <Stack id="Search-bar" alignment="center" direction="row">
+            <TextField 
+                      id="text-field"
+                      variant="outlined"
+                      placeholder="Search..."
+                      size="small"
+                      style={{color:"gray"}}
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment id="search-icon">
+                            <IconButton>
+                              <SearchIcon />
+                            </IconButton>
+                          </InputAdornment>
+                        )
+                      }} 
+                  />
                       
-          </form> 
+      
+            <Button variant="contained" style={{backgroundColor:"#111"}}><DarkModeIcon style={{fill:"white"}} /></Button>
+            </Stack>
         </nav>
       </div>
 
