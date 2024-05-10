@@ -10,7 +10,6 @@ body{
 body .h1{
     display: flex;
     left:0;
-    color: black;
 }
 
 body p{

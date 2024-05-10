@@ -15,45 +15,76 @@ import Stack from '@mui/material/Stack';
 import { useState } from "react";
 import { Button } from "@mui/material";
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from "@mui/icons-material/LightMode";
 import InputAdornment from "@mui/material/InputAdornment";
 
 const Layout = () => {
-  const [theme, setTheme] = useState("light")
 
-  const styles = {
-    style1:{fontWeight:"600", paddingLeft:"10px"},
-    styles2:{color:"rgb(50,10,200)", paddingLeft:"10px", textDecoration:"none"}
-  };
-  
-  const themes = {
+  //nav themes
+  const nav_themes = {
     darkMode:{backgroundColor: "green"},
     lightMode:{backgroundColor: "blue"}
+  }
+
+  //mode-button themes
+  const button_themes ={
+    darkMode:{backgroundColor: "white"},
+    lightMode:{backgroundColor: "black"}
+  }
+
+  //App body themes
+  const body_themes = {
+    darkMode:{backgroundColor: "#111", color: "white"},
+    lightMode:{backgroundColor: "white", color:"black"}
+  }
+  
+  //useState hooks (change to "[nav_theme, setNavTheme] ?? to make it more descriptive")
+  const [isdark, setTheme] = useState(false); // "gear!"
+  const [mode,setMode] = useState(nav_themes.darkMode);
+  const [body_theme, setBodyTheme] = useState(body_themes.darkMode);
+  const [button_theme, setButtonTheme] = useState(button_themes.darkMode);
+
+  //nav and footer styles
+  const styles = {
+    nav_style:{fontWeight:"600", paddingLeft:"10px"},
+    footer_style:{color:"rgb(50,10,200)", paddingLeft:"10px", textDecoration:"none"}
+  };
+  
+  const changeTheme = () => {
+    setTheme(() => {
+      return !isdark? true:false;}); 
+    setMode(() => {
+      return isdark? nav_themes.darkMode: nav_themes.lightMode;}) 
+    setBodyTheme(() => {
+      return isdark? body_themes.darkMode: body_themes.lightMode;})
+    setButtonTheme(() => {
+      return isdark? button_themes.darkMode: button_themes.lightMode;})
   }
 
   return (
     <>
       <div id="org-logo"></div>
       <div>
-        <nav id="nav-bar" style={themes.darkMode}>
+        <nav id="nav-bar" style={mode}>
           <Stack id="module-links" alignment="center" direction="row">
             <Link to="/">
               <HomeIcon/>
-              <Typography style={styles.style1}>Home</Typography>
+              <Typography style={styles.nav_style}>Home</Typography>
             </Link>  
 
             <Link to="/blogs">
               <ArticleIcon/>
-              <Typography style={styles.style1}>Blogs</Typography>
+              <Typography style={styles.nav_style}>Blogs</Typography>
             </Link>  
 
             <Link to="/contact">
               <PhoneIcon/>
-              <Typography style={styles.style1}>Contact_Us</Typography>
+              <Typography style={styles.nav_style}>Contact_Us</Typography>
             </Link>
 
             <Link to="/about">
               <InfoIcon />
-              <Typography style={styles.style1}>About</Typography>
+              <Typography style={styles.nav_style}>About</Typography>
             </Link>
           </Stack>
 
@@ -63,7 +94,7 @@ const Layout = () => {
                       variant="outlined"
                       placeholder="Search..."
                       size="small"
-                      style={{color:"gray"}}
+                      style={{color:"balck"}}
                       InputProps={{
                         endAdornment: (
                           <InputAdornment id="search-icon">
@@ -74,34 +105,42 @@ const Layout = () => {
                         )
                       }} 
                   />
-                      
-      
-            <Button variant="contained" style={{backgroundColor:"#111"}}><DarkModeIcon style={{fill:"white"}} /></Button>
+            <Button 
+              variant="contained" 
+              style={button_theme} //////
+              onClick={changeTheme}>  
+                {isdark? 
+                  <DarkModeIcon style={{fill:"white"}}/> :
+                  <LightModeIcon style={{fill: "black"}} />
+                }
+            </Button>
             </Stack>
         </nav>
       </div>
-
-      <div id="outlet-div">
-        <Outlet />
+      
+      <div id="Outlet-div-wrapper" style={body_theme}>
+        <div id="outlet-div" style={body_theme}>
+          <Outlet />
+        </div>
       </div>
       
       <footer> {/*use <stack> to replace <Stack> */}
         <Stack id="sectionA" direction="column"> 
           <Typography variant="h4" >Quick links</Typography>
           <Link to="/">
-              <Typography style={styles.styles2}>Home</Typography>
+              <Typography style={styles.footer_style}>Home</Typography>
             </Link>  
 
             <Link to="/blogs">      
-              <Typography style={styles.styles2}>Blogs</Typography>
+              <Typography style={styles.footer_style}>Blogs</Typography>
             </Link>  
 
             <Link to="/contact">    
-              <Typography style={styles.styles2}>Contact_Us</Typography>
+              <Typography style={styles.footer_style}>Contact_Us</Typography>
             </Link>
 
             <Link to="/about">
-              <Typography style={styles.styles2}>About</Typography>
+              <Typography style={styles.footer_style}>About</Typography>
             </Link>
         
         </Stack>
@@ -109,15 +148,15 @@ const Layout = () => {
         <Stack id="sectionB" direction="column">
           <Typography variant="h4">For Learners</Typography>
           <Link to="/login">      
-            <Typography style={styles.styles2}>Login</Typography>
+            <Typography style={styles.footer_style}>Login</Typography>
           </Link>  
 
           <Link to="/sign-in">    
-            <Typography style={styles.styles2}>Enroll/Register</Typography>
+            <Typography style={styles.footer_style}>Enroll/Register</Typography>
           </Link>
 
           <Link to="/queries">
-            <Typography style={styles.styles2}>FAQ's 'just example'</Typography>
+            <Typography style={styles.footer_style}>FAQ's 'just example'</Typography>
           </Link>
         </Stack>   
       </footer>
