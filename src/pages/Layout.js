@@ -13,10 +13,12 @@ import Stack from '@mui/material/Stack';
 //import { colors } from "@mui/material";
 //import Box from "@mui/material/Box";
 import { useState } from "react";
-import { Button } from "@mui/material";
+import Divider from "@mui/material/Divider";
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from "@mui/icons-material/LightMode";
 import InputAdornment from "@mui/material/InputAdornment";
+import Button from "@mui/material/Button";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Layout = () => {
 
@@ -50,6 +52,7 @@ const Layout = () => {
     footer_style:{color:"rgb(50,10,200)", paddingLeft:"10px", textDecoration:"none"}
   };
   
+  //switching between dark and light mode
   const changeTheme = () => {
     setTheme(() => {
       return !isdark? true:false;}); 
@@ -86,6 +89,10 @@ const Layout = () => {
               <InfoIcon />
               <Typography style={styles.nav_style}>About</Typography>
             </Link>
+            <Link to="login">
+              <AccountCircleIcon/>
+              <Typography style={styles.nav_style}>Register/Login</Typography>
+            </Link>
           </Stack>
 
           <Stack id="Search-bar" alignment="center" direction="row">
@@ -96,7 +103,7 @@ const Layout = () => {
                       size="small"
                       style={{color:"balck"}}
                       InputProps={{
-                        endAdornment: (
+                        startAdornment: (
                           <InputAdornment id="search-icon">
                             <IconButton>
                               <SearchIcon />
@@ -124,7 +131,8 @@ const Layout = () => {
         </div>
       </div>
       
-      <footer> {/*use <stack> to replace <Stack> */}
+      {/** style footer properly */}
+      <footer style={body_theme}> {/*use <stack> to replace <footer> */}
         <Stack id="sectionA" direction="column"> 
           <Typography variant="h4" >Quick links</Typography>
           <Link to="/">
@@ -144,7 +152,7 @@ const Layout = () => {
             </Link>
         
         </Stack>
-
+        <Divider orientation="vertical" flexItem/>
         <Stack id="sectionB" direction="column">
           <Typography variant="h4">For Learners</Typography>
           <Link to="/login">      
