@@ -6,6 +6,7 @@ import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import About from "./pages/About";
+import Login from "./pages/Login/Login";
 import "./App.css";
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="About" element={<About />} />
+          <Route path="about" element={<About />} />
+          <Route path="login" element={<Login />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
