@@ -20,6 +20,8 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
+
+
 const Layout = () => {
 
   //nav themes
@@ -101,7 +103,7 @@ const Layout = () => {
                       variant="outlined"
                       placeholder="Search..."
                       size="small"
-                      style={{color:"balck"}}
+                      style={{color:"black"}}
                       InputProps={{
                         startAdornment: (
                           <InputAdornment id="search-icon">

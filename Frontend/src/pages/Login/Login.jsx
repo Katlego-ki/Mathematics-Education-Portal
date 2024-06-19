@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import React  from "react";
-import Box from "@mui/material/Box";
+import "./Login.css";
 
 const button_style = {
     width:"30%",
@@ -8,28 +8,24 @@ const button_style = {
 }
 
 const Login = () => {
+
     return (
-        <>
-        <Box id = "form-container">
-            <form id = "login-form">
-                <label for="email">Email:</label>
+        <div id = "form-container">
+            <form id = "login-form" style={{backgroundColor: 'white'}}>
                     <input 
                         id="email"
                         type="email" 
-                        placeholder="Enter your email..."/>
-                
+                        placeholder="Email or Username"
+                    />
 
-                <label for="password">Password:</label> 
                     <input 
                         id="password"
                         type="password" 
-                        placeholder="Enter password..."/>
+                        placeholder="Password"/>
                   
                 <Button type="submit" variant="contained" style={button_style}>Submit</Button>
             </form>
-        </Box>
-        
-        </>
+        </div>
     )
 }
 
