@@ -1,5 +1,5 @@
 #form-container{
-    width: 600px;
+    width: 400px;
     padding: 10px;
     margin: auto;
   
@@ -24,4 +24,11 @@ input{
     border: 1px solid #ccc;
     border-radius: 6px;
     box-sizing: border-box; 
+}
+
+form div{
+    color: red;
+    width: 75%;
+    font-size: 13px;
+    margin: auto;
 }
