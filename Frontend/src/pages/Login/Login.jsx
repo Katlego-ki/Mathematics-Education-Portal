@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button";
-import React  from "react";
+import React, { useState }  from "react";
 import "./Login.css";
 
 const button_style = {
@@ -9,21 +9,54 @@ const button_style = {
 
 const Login = () => {
 
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [errors, setErrors] = useState(false);
+
+    const validate = () => {
+        
+        if(!email){
+            setErrors(true);
+        }
+        if(!password){
+            setErrors(true);
+        }
+    }
+      
+        
+    const handleSubmit = (e) => {
+        e.preventDefault();//prevent refreshing page upon submit among other things.
+        validate();
+    }
+
     return (
         <div id = "form-container">
-            <form id = "login-form" style={{backgroundColor: 'white'}}>
+            <form 
+                id = "login-form" 
+                style={{backgroundColor: 'white'}}
+                onSubmit={handleSubmit}>
                     <input 
-                        id="email"
                         type="email" 
+                        value={email}
                         placeholder="Email or Username"
+                        onChange={(e) => setEmail(e.target.value)}
                     />
 
                     <input 
-                        id="password"
-                        type="password" 
-                        placeholder="Password"/>
+                        type="password"
+                        value={password}
+                        placeholder="Password"                     
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    
+                    {errors && <div>Please enter your username and password!</div>}
                   
-                <Button type="submit" variant="contained" style={button_style}>Submit</Button>
+                <Button 
+                    type="submit" 
+                    variant="contained" 
+                    style={button_style}
+                    onSubmit={() => handleSubmit}
+                    >Submit</Button>
             </form>
         </div>
     )
