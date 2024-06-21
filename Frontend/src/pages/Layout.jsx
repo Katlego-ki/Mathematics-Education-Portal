@@ -26,8 +26,8 @@ const Layout = () => {
 
   //nav themes
   const nav_themes = {
-    darkMode:{backgroundColor: "green"},
-    lightMode:{backgroundColor: "blue"}
+    darkMode:{backgroundColor: "green", color: "grey"},
+    lightMode:{backgroundColor: "blue", color: "black"}
   }
 
   //mode-button themes
@@ -38,20 +38,25 @@ const Layout = () => {
 
   //App body themes
   const body_themes = {
-    darkMode:{backgroundColor: "#111", color: "white"},
+    darkMode:{backgroundColor: "#111", color: "grey"},
     lightMode:{backgroundColor: "white", color:"black"}
   }
-  
+
+  //footer themes
+  const footer_themes = {
+    darkMode:{color:"grey", paddingLeft:"10px"},
+    lightMode:{color:"#111", paddingLeft:"10px"}
+  }
   //useState hooks (change to "[nav_theme, setNavTheme] ?? to make it more descriptive")
   const [isdark, setTheme] = useState(false); // "gear!"
   const [mode,setMode] = useState(nav_themes.darkMode);
   const [body_theme, setBodyTheme] = useState(body_themes.darkMode);
   const [button_theme, setButtonTheme] = useState(button_themes.darkMode);
+  const [footer_theme, setFooterTheme] = useState(footer_themes.darkMode);
 
   //nav and footer styles
   const styles = {
     nav_style:{fontWeight:"600", paddingLeft:"10px"},
-    footer_style:{color:"rgb(50,10,200)", paddingLeft:"10px", textDecoration:"none"}
   };
   
   //switching between dark and light mode
@@ -64,6 +69,8 @@ const Layout = () => {
       return isdark? body_themes.darkMode: body_themes.lightMode;})
     setButtonTheme(() => {
       return isdark? button_themes.darkMode: button_themes.lightMode;})
+    setFooterTheme(() => {
+      return isdark? footer_themes.darkMode: footer_themes.lightMode;})
   }
 
   return (
@@ -138,19 +145,19 @@ const Layout = () => {
         <Stack id="sectionA" direction="column"> 
           <Typography variant="h4" >Quick links</Typography>
           <Link to="/">
-              <Typography style={styles.footer_style}>Home</Typography>
+              <Typography className="Links" style={footer_theme}>Home</Typography>
             </Link>  
 
             <Link to="/blogs">      
-              <Typography style={styles.footer_style}>Blogs</Typography>
+              <Typography style={footer_theme}>Blogs</Typography>
             </Link>  
 
             <Link to="/contact">    
-              <Typography style={styles.footer_style}>Contact_Us</Typography>
+              <Typography style={footer_theme}>Contact_Us</Typography>
             </Link>
 
             <Link to="/about">
-              <Typography style={styles.footer_style}>About</Typography>
+              <Typography style={footer_theme}>About</Typography>
             </Link>
         
         </Stack>
@@ -158,15 +165,15 @@ const Layout = () => {
         <Stack id="sectionB" direction="column">
           <Typography variant="h4">For Learners</Typography>
           <Link to="/login">      
-            <Typography style={styles.footer_style}>Login</Typography>
+            <Typography style={footer_theme}>Login</Typography>
           </Link>  
 
           <Link to="/sign-in">    
-            <Typography style={styles.footer_style}>Enroll/Register</Typography>
+            <Typography style={footer_theme}>Enroll/Register</Typography>
           </Link>
 
           <Link to="/queries">
-            <Typography style={styles.footer_style}>FAQ's 'just example'</Typography>
+            <Typography style={footer_theme}>FAQ's 'just example'</Typography>
           </Link>
         </Stack>   
       </footer>

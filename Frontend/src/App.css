@@ -17,7 +17,7 @@ nav div{
 #module-links a{
   text-decoration: none;
   display: flex;
-  color: white;
+  color: rgba(255, 255, 255, 0.819);
   font-weight: 600;
   justify-content: space-evenly;
   height: 100%;
@@ -34,6 +34,7 @@ footer{
   display: flex;
   justify-content: space-evenly;
   position: relative;
+  text-decoration: none;
   /*To fix overflowing, left,right = 0 instead of width: 100%*/
   left: 0;
   right: 0;
@@ -60,4 +61,9 @@ footer{
 #Search-bar{
   justify-content:flex-end;
   padding-right: 1%;
+}
+
+.Links a{
+  text-decoration: none;
+  text-decoration-line: none;
 }
