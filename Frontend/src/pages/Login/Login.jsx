@@ -55,6 +55,7 @@ const Login = () => {
                     type="submit" 
                     variant="contained" 
                     style={button_style}
+                    disabled={!password || !email}
                     onSubmit={() => handleSubmit}
                     >Submit</Button>
             </form>
