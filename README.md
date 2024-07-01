@@ -12,7 +12,7 @@ gh repo clone Katlego-ki/Mathematics-Education-Portal
 cd Frontend
 ```
 
-## 3: Install all depedencies
+## 3: Install all dependencies
 ```
 npm install
 ```
