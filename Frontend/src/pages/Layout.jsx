@@ -44,8 +44,8 @@ const Layout = () => {
 
   //footer themes
   const footer_themes = {
-    darkMode:{color:"grey", paddingLeft:"10px"},
-    lightMode:{color:"#111", paddingLeft:"10px"}
+    darkMode:{color:"grey", paddingLeft:"10px",fontFamily: "monospace"},
+    lightMode:{color:"#111", paddingLeft:"10px",fontFamily: "monospace"}
   }
   //useState hooks (change to "[nav_theme, setNavTheme] ?? to make it more descriptive")
   const [isdark, setTheme] = useState(false); // "gear!"
@@ -75,28 +75,28 @@ const Layout = () => {
 
   return (
     <>
-      <div id="org-logo"></div>
+      <div id="org-logo"><p id="org-logo-text">--Institution logo here-- </p></div>
       <div>
         <nav id="nav-bar" style={mode}>
           <Stack id="module-links" alignment="center" direction="row">
             <Link to="/">
               <HomeIcon/>
-              <Typography style={styles.nav_style}>Home</Typography>
+              <Typography style={styles.nav_style} className="nav-link">Home</Typography>
             </Link>  
 
             <Link to="/blogs">
               <ArticleIcon/>
-              <Typography style={styles.nav_style}>Blogs</Typography>
+              <Typography style={styles.nav_style} className="nav-link">Blogs</Typography>
             </Link>  
 
             <Link to="/contact">
               <PhoneIcon/>
-              <Typography style={styles.nav_style}>Contact_Us</Typography>
+              <Typography style={styles.nav_style} className="nav-link" >Contact_Us</Typography>
             </Link>
 
             <Link to="/about">
               <InfoIcon />
-              <Typography style={styles.nav_style}>About</Typography>
+              <Typography style={styles.nav_style} className="nav-link">About</Typography>
             </Link>
             <Link to="login">
               <AccountCircleIcon/>
@@ -143,7 +143,7 @@ const Layout = () => {
       {/** style footer properly */}
       <footer style={body_theme}> {/*use <stack> to replace <footer> */}
         <Stack id="sectionA" direction="column"> 
-          <Typography variant="h4" >Quick links</Typography>
+          <Typography variant="h4" id="sectionA-title">Quick links</Typography>
           <Link to="/">
               <Typography className="Links" style={footer_theme}>Home</Typography>
             </Link>  
@@ -163,7 +163,7 @@ const Layout = () => {
         </Stack>
         <Divider orientation="vertical" flexItem/>
         <Stack id="sectionB" direction="column">
-          <Typography variant="h4">For Learners</Typography>
+          <Typography variant="h4" id="sectionB-title">For Learners</Typography>
           <Link to="/login">      
             <Typography style={footer_theme}>Login</Typography>
           </Link>  
@@ -173,7 +173,7 @@ const Layout = () => {
           </Link>
 
           <Link to="/queries">
-            <Typography style={footer_theme}>FAQ's 'just example'</Typography>
+            <Typography style={footer_theme}>FAQ's</Typography>
           </Link>
         </Stack>   
       </footer>

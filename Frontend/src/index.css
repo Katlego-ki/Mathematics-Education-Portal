@@ -10,10 +10,16 @@ body{
 body .h1{
   display: flex;
   left:0;
+  font-family: monospace;
 }
 
 body p{
   flex-wrap: wrap;
+  font-family: monospace;
+}
+
+body a{
+  font-family: monospace;
 }
 
 #root{
